@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calulator</title>
+    <style>
+        *{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: lightgray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.main{
+    width: 400px;
+    height: 300px;
+    margin-left: 500px ;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+.margin {
+    padding: 10px 20px ;
+}
+ td{ 
+     padding-left: 20px ; */
+ } 
+.two{
+    border: 10px solid balck;
+    margin-top: 20px;
+}
+.button{
+    margin-top: 20px;
+}
+.total  {
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+.main2{
+    width: 250px; height:200px ;
+    background-color: black;
+    color: white;
+    margin-top:60px ;
+    margin-left: 600px;
+}
+.margin2 >p{
+    padding: 10px 10px ;
+    color: yellow;
+}
+.total1{
+    color: black;
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+.main3{
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+h1{
+    text-align: center;
+}
+.color >ul  {
+
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    /* margin-left: 5px; */
+}
+.color>ul >li{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.yellow{
+    width: 50px;height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.red{
+    width: 50px;height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: red;
+}
+.green{
+    width: 50px;height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background  -color: green;
+}
+.blue{
+    width: 50px;height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color:  blue;
+ 
+}
+.main4{
+    border:1px solid black;
+    width: 200px;
+    height: 100px;
+    background-color: lightcoral;
+    margin-top: 20px;
+    margin-left: 500px;
+}
+ 
+    </style>
+    <!-- <link rel="stylesheet" href="css.css" type="text/css"> -->
+</head>
+<body>
+    <div class="main">
+        <div class="containt">
+            <div class="margin">
+                <p>BMI Calculator</p>
+              <table class="one"><tr><td>Weight</td><td><input type="number" class="weight" placeholder="Kg"></td> </tr><br>
+                <tr><td>Height</td><td><input type="number" class="height" placeholder="cente-meter"></td></tr>
+             </table>
+                <div class="status">
+                    <table style="border: 1px solid black;" class="two">
+                   <th> <tr ><td><u>BMI</u></td><td><u>Status</u></td></tr></th>
+                    <tr><td>  less  18.4</td><td>Underweight</td></tr>
+                    <tr><td>  18.5-24.9</td><td>Normal</td></tr>
+                    <tr><td>  25.0-39.9</td><td>Over weight</td></tr>
+                    <tr><td>  greater 40.0</td><td>Obese</td></tr></table>
+                </div>
+                <button class="button" onclick="cal()">Click here</button><div class="total"></div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- pound to weight -->
+    <h1>pound to weight</h1>
+    <div class="main2">
+        <div class="margin2">
+            <p>Weight converted pound to kg</p>
+
+            <h3>enter the value in pound</h3>
+            Pound:<input type="number" class="pound">
+            <p>your weight is kilogram is:</p>
+            <button onclick="convert()">click here</button>
+            <div class="total1">total</div>
+        </div>
+    </div>
+    <!-- color change -->
+<h1>color change of website</h1>
+    <div class="main3">
+        <div class="color"><ul>
+            <li><div class="yellow" ></div></li>
+            <li><div class="red"></div></li>
+            <li><div class="green"></div></li>
+            <li><div class="blue"></div></li>
+        </ul></div>
+    </div>
+
+
+<!-- string to number -->
+<h1>string count</h1>
+    <div class="main4">
+        Enter something<input type="text" class="inp" placeholder="write string"><br>
+        <button onclick="cool()">click</button>
+        <div class="result"></div>
+    </div>
+    <script>
+        function cal(){
+            var weight=document.querySelector(".weight").value;
+            var height=document.querySelector(".height").value;
+           var total=(weight*10000)/(height*height);
+           document.querySelector(".total").innerHTML=total;
+
+        }
+        function convert(){
+            var pound=document.querySelector(".pound").value;
+            var total=pound*0.45359237;
+            document.querySelector(".total1").innerHTML=total;
+        }
+        document.querySelector(".yellow").addEventListener("click",function(){
+            document.querySelector("body").style.background="yellow";
+            document.querySelector(".yellow").style.background="lightyellow";
+        });
+        document.querySelector(".red").addEventListener("click",function(){
+            document.querySelector("body").style.background="red";
+            document.querySelector(".red").style.background="lightcoral";
+        });
+        document.querySelector(".green").addEventListener("click",function(){
+            document.querySelector("body").style.background="green";
+            document.querySelector(".green").style.background="lightgreen";
+        });
+        document.querySelector(".blue").addEventListener("click",function(){
+            document.querySelector("body").style.background="blue";
+            document.querySelector(".blue").style.background="lightyblue";
+        });
+        function cool(){
+            var a=document.querySelector(".inp").value;
+            console.log(a);
+            var c=a.split("");
+            console.log(c);
+            var d=c.length;
+            console.log(d);
+// document.write(d);
+            document.querySelector(".result").innerHTML=`total number of letter is:${d}`;
+        }
+        
+    </script>
+</body>
+</html>
